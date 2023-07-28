@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
+import 'package:getx_testing/RANDOM/riddle/controller/riddle_controller.dart';
 import 'package:getx_testing/abstract_repos/get_quote_data.dart';
-import 'package:getx_testing/api/get_quote_api.dart';
 import 'package:getx_testing/error/failure.dart';
 import 'package:getx_testing/error/server_exception.dart';
-import 'package:getx_testing/ramdom/quote/models/quote_model.dart';
+import 'package:getx_testing/RANDOM/quote/models/quote_model.dart';
 import 'package:getx_testing/repo_impl/get_quote.dart';
 import 'package:getx_testing/usecases/get_quote_usecase.dart';
 import 'package:mockito/annotations.dart';
@@ -16,7 +16,7 @@ import 'package:mockito/mockito.dart';
 import 'json/json_reader.dart';
 import 'widget_test.mocks.dart';
 
-@GenerateMocks([GetQuoteData, GetQuoteImpl])
+@GenerateMocks([GetQuoteData, GetQuoteImpl, RiddleController])
 void main() {
   group("getQuoteData", () {
     late MockGetQuoteData repo;
@@ -56,6 +56,27 @@ void main() {
         // assert
         expect(result, Left(tServerException));
         verify(repo.getDataFromApi());
+      },
+    );
+  });
+
+  group("riddle show answer", () {
+    late MockRiddleController mockRiddleController;
+
+    setUp(() {
+      mockRiddleController = MockRiddleController();
+    });
+    test(
+      "show return isShowed = true when onTapping showOnTap",
+      () async {
+        // arrange
+        when(mockRiddleController.isShowed).thenReturn(false.obs);
+        when(mockRiddleController.showOnTap())
+            .thenAnswer((_) => mockRiddleController.isShowed.value = true);
+        // act
+        final result = mockRiddleController.showOnTap();
+        // assert
+        expect(result, mockRiddleController.isShowed.value);
       },
     );
   });

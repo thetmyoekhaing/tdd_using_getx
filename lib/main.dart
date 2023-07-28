@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_testing/screens/home_screen.dart';
+import 'package:getx_testing/z/initial_bindind.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       color: Colors.black,
-      getPages: [],
+      initialRoute: "/",
+      initialBinding: InititalBinding(),
+      getPages: [
+        GetPage(
+          name: "/",
+          page: () => const HomeScreen(),
+        )
+      ],
     );
   }
 }
