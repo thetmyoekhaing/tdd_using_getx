@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:getx_testing/dotenv.dart';
 
 class GetApi {
   final String apiEndpoint;
@@ -8,9 +7,8 @@ class GetApi {
 
   GetApi(this.apiEndpoint, this.route);
   Future get() async {
-    final Map<String, dynamic> headers = {"X-Api-Key": API_KEY};
     final res =
-        await dio.get("$apiEndpoint$route", options: Options(headers: headers));
+        await dio.get("$apiEndpoint$route", options: Options(headers: {}));
     return res.data;
   }
 }

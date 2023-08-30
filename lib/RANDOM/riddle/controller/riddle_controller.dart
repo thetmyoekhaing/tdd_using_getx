@@ -14,7 +14,7 @@ class RiddleController extends GetxController {
   RiddleController(this._usecase);
 
   Future<void> getRiddle() async {
-    final data = await _usecase();
+    final data = await _usecase.getDataFromApi();
 
     // print(data);
     data.fold(

@@ -1,3 +1,5 @@
+/// Entity (model) to get from api
+
 class RiddleModel {
   final String title;
   final String question;

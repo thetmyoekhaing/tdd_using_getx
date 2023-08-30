@@ -7,10 +7,10 @@ import 'package:getx_testing/api/get_api.dart';
 import 'package:getx_testing/error/failure.dart';
 import 'package:getx_testing/error/server_exception.dart';
 
-/// return QuoteModel when api call is successful
+/// Domain Layer
+/// return RiddleModel when api call is successful
 ///
 /// return `ServerException` when api call is unsuccessful
-
 class GetRiddleImpl implements GetRiddle {
   @override
   Future<Either<Failure, RiddleModel>> getDataFromApi() async {

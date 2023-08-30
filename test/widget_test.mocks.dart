@@ -3,19 +3,18 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i5;
-import 'dart:ui' as _i12;
+import 'dart:async' as _i6;
+import 'dart:ui' as _i8;
 
-import 'package:dartz/dartz.dart' as _i2;
-import 'package:get/get.dart' as _i3;
-import 'package:get/get_state_manager/src/simple/list_notifier.dart' as _i11;
-import 'package:getx_testing/abstract_repos/get_quote_data.dart' as _i4;
-import 'package:getx_testing/error/failure.dart' as _i6;
-import 'package:getx_testing/RANDOM/quote/models/quote_model.dart' as _i7;
+import 'package:dartz/dartz.dart' as _i3;
+import 'package:get/get.dart' as _i2;
+import 'package:get/get_state_manager/src/simple/list_notifier.dart' as _i7;
+import 'package:getx_testing/abstract_repos/get_riddle.dart' as _i9;
+import 'package:getx_testing/error/failure.dart' as _i10;
 import 'package:getx_testing/RANDOM/riddle/controller/riddle_controller.dart'
-    as _i9;
-import 'package:getx_testing/RANDOM/riddle/model/riddle_model.dart' as _i10;
-import 'package:getx_testing/repo_impl/get_quote.dart' as _i8;
+    as _i4;
+import 'package:getx_testing/RANDOM/riddle/model/riddle_model.dart' as _i5;
+import 'package:getx_testing/repo_impl/get_riddle.dart' as _i11;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -29,8 +28,8 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
-  _FakeEither_0(
+class _FakeRxBool_0 extends _i1.SmartFake implements _i2.RxBool {
+  _FakeRxBool_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -39,8 +38,8 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
-class _FakeRxBool_1 extends _i1.SmartFake implements _i3.RxBool {
-  _FakeRxBool_1(
+class _FakeRx_1<T> extends _i1.SmartFake implements _i2.Rx<T> {
+  _FakeRx_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -49,8 +48,9 @@ class _FakeRxBool_1 extends _i1.SmartFake implements _i3.RxBool {
         );
 }
 
-class _FakeRx_2<T> extends _i1.SmartFake implements _i3.Rx<T> {
-  _FakeRx_2(
+class _FakeInternalFinalCallback_2<T> extends _i1.SmartFake
+    implements _i2.InternalFinalCallback<T> {
+  _FakeInternalFinalCallback_2(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -59,117 +59,64 @@ class _FakeRx_2<T> extends _i1.SmartFake implements _i3.Rx<T> {
         );
 }
 
-class _FakeInternalFinalCallback_3<T> extends _i1.SmartFake
-    implements _i3.InternalFinalCallback<T> {
-  _FakeInternalFinalCallback_3(
+class _FakeEither_3<L, R> extends _i1.SmartFake implements _i3.Either<L, R> {
+  _FakeEither_3(
     Object parent,
     Invocation parentInvocation,
   ) : super(
           parent,
           parentInvocation,
         );
-}
-
-/// A class which mocks [GetQuoteData].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockGetQuoteData extends _i1.Mock implements _i4.GetQuoteData {
-  MockGetQuoteData() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i5.Future<_i2.Either<_i6.Failure, _i7.QuoteModel>> getDataFromApi() =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getDataFromApi,
-          [],
-        ),
-        returnValue: _i5.Future<_i2.Either<_i6.Failure, _i7.QuoteModel>>.value(
-            _FakeEither_0<_i6.Failure, _i7.QuoteModel>(
-          this,
-          Invocation.method(
-            #getDataFromApi,
-            [],
-          ),
-        )),
-      ) as _i5.Future<_i2.Either<_i6.Failure, _i7.QuoteModel>>);
-}
-
-/// A class which mocks [GetQuoteImpl].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockGetQuoteImpl extends _i1.Mock implements _i8.GetQuoteImpl {
-  MockGetQuoteImpl() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i5.Future<_i2.Either<_i6.Failure, _i7.QuoteModel>> getDataFromApi() =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getDataFromApi,
-          [],
-        ),
-        returnValue: _i5.Future<_i2.Either<_i6.Failure, _i7.QuoteModel>>.value(
-            _FakeEither_0<_i6.Failure, _i7.QuoteModel>(
-          this,
-          Invocation.method(
-            #getDataFromApi,
-            [],
-          ),
-        )),
-      ) as _i5.Future<_i2.Either<_i6.Failure, _i7.QuoteModel>>);
 }
 
 /// A class which mocks [RiddleController].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRiddleController extends _i1.Mock implements _i9.RiddleController {
+class MockRiddleController extends _i1.Mock implements _i4.RiddleController {
   MockRiddleController() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i3.RxBool get isLoading => (super.noSuchMethod(
+  _i2.RxBool get isLoading => (super.noSuchMethod(
         Invocation.getter(#isLoading),
-        returnValue: _FakeRxBool_1(
+        returnValue: _FakeRxBool_0(
           this,
           Invocation.getter(#isLoading),
         ),
-      ) as _i3.RxBool);
+      ) as _i2.RxBool);
   @override
-  _i3.RxBool get isShowed => (super.noSuchMethod(
+  _i2.RxBool get isShowed => (super.noSuchMethod(
         Invocation.getter(#isShowed),
-        returnValue: _FakeRxBool_1(
+        returnValue: _FakeRxBool_0(
           this,
           Invocation.getter(#isShowed),
         ),
-      ) as _i3.RxBool);
+      ) as _i2.RxBool);
   @override
-  _i3.Rx<_i10.RiddleModel?> get riddle => (super.noSuchMethod(
+  _i2.Rx<_i5.RiddleModel?> get riddle => (super.noSuchMethod(
         Invocation.getter(#riddle),
-        returnValue: _FakeRx_2<_i10.RiddleModel?>(
+        returnValue: _FakeRx_1<_i5.RiddleModel?>(
           this,
           Invocation.getter(#riddle),
         ),
-      ) as _i3.Rx<_i10.RiddleModel?>);
+      ) as _i2.Rx<_i5.RiddleModel?>);
   @override
-  _i3.InternalFinalCallback<void> get onStart => (super.noSuchMethod(
+  _i2.InternalFinalCallback<void> get onStart => (super.noSuchMethod(
         Invocation.getter(#onStart),
-        returnValue: _FakeInternalFinalCallback_3<void>(
+        returnValue: _FakeInternalFinalCallback_2<void>(
           this,
           Invocation.getter(#onStart),
         ),
-      ) as _i3.InternalFinalCallback<void>);
+      ) as _i2.InternalFinalCallback<void>);
   @override
-  _i3.InternalFinalCallback<void> get onDelete => (super.noSuchMethod(
+  _i2.InternalFinalCallback<void> get onDelete => (super.noSuchMethod(
         Invocation.getter(#onDelete),
-        returnValue: _FakeInternalFinalCallback_3<void>(
+        returnValue: _FakeInternalFinalCallback_2<void>(
           this,
           Invocation.getter(#onDelete),
         ),
-      ) as _i3.InternalFinalCallback<void>);
+      ) as _i2.InternalFinalCallback<void>);
   @override
   bool get initialized => (super.noSuchMethod(
         Invocation.getter(#initialized),
@@ -191,14 +138,14 @@ class MockRiddleController extends _i1.Mock implements _i9.RiddleController {
         returnValue: 0,
       ) as int);
   @override
-  _i5.Future<void> getRiddle() => (super.noSuchMethod(
+  _i6.Future<void> getRiddle() => (super.noSuchMethod(
         Invocation.method(
           #getRiddle,
           [],
         ),
-        returnValue: _i5.Future<void>.value(),
-        returnValueForMissingStub: _i5.Future<void>.value(),
-      ) as _i5.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
   bool showOnTap() => (super.noSuchMethod(
         Invocation.method(
@@ -208,14 +155,14 @@ class MockRiddleController extends _i1.Mock implements _i9.RiddleController {
         returnValue: false,
       ) as bool);
   @override
-  _i5.Future<void> onInit() => (super.noSuchMethod(
+  _i6.Future<void> onInit() => (super.noSuchMethod(
         Invocation.method(
           #onInit,
           [],
         ),
-        returnValue: _i5.Future<void>.value(),
-        returnValueForMissingStub: _i5.Future<void>.value(),
-      ) as _i5.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
   void update([
     List<Object>? ids,
@@ -256,16 +203,15 @@ class MockRiddleController extends _i1.Mock implements _i9.RiddleController {
         returnValueForMissingStub: null,
       );
   @override
-  _i11.Disposer addListener(_i11.GetStateUpdate? listener) =>
-      (super.noSuchMethod(
+  _i7.Disposer addListener(_i7.GetStateUpdate? listener) => (super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
         ),
         returnValue: () {},
-      ) as _i11.Disposer);
+      ) as _i7.Disposer);
   @override
-  void removeListener(_i12.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -299,7 +245,7 @@ class MockRiddleController extends _i1.Mock implements _i9.RiddleController {
   @override
   void removeListenerId(
     Object? id,
-    _i12.VoidCallback? listener,
+    _i8.VoidCallback? listener,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -320,9 +266,9 @@ class MockRiddleController extends _i1.Mock implements _i9.RiddleController {
         returnValueForMissingStub: null,
       );
   @override
-  _i11.Disposer addListenerId(
+  _i7.Disposer addListenerId(
     Object? key,
-    _i11.GetStateUpdate? listener,
+    _i7.GetStateUpdate? listener,
   ) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -333,7 +279,7 @@ class MockRiddleController extends _i1.Mock implements _i9.RiddleController {
           ],
         ),
         returnValue: () {},
-      ) as _i11.Disposer);
+      ) as _i7.Disposer);
   @override
   void disposeId(Object? id) => super.noSuchMethod(
         Invocation.method(
@@ -342,4 +288,58 @@ class MockRiddleController extends _i1.Mock implements _i9.RiddleController {
         ),
         returnValueForMissingStub: null,
       );
+}
+
+/// A class which mocks [GetRiddle].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetRiddle extends _i1.Mock implements _i9.GetRiddle {
+  MockGetRiddle() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i6.Future<_i3.Either<_i10.Failure, _i5.RiddleModel>> getDataFromApi() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getDataFromApi,
+          [],
+        ),
+        returnValue:
+            _i6.Future<_i3.Either<_i10.Failure, _i5.RiddleModel>>.value(
+                _FakeEither_3<_i10.Failure, _i5.RiddleModel>(
+          this,
+          Invocation.method(
+            #getDataFromApi,
+            [],
+          ),
+        )),
+      ) as _i6.Future<_i3.Either<_i10.Failure, _i5.RiddleModel>>);
+}
+
+/// A class which mocks [GetRiddleImpl].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetRiddleImpl extends _i1.Mock implements _i11.GetRiddleImpl {
+  MockGetRiddleImpl() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i6.Future<_i3.Either<_i10.Failure, _i5.RiddleModel>> getDataFromApi() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getDataFromApi,
+          [],
+        ),
+        returnValue:
+            _i6.Future<_i3.Either<_i10.Failure, _i5.RiddleModel>>.value(
+                _FakeEither_3<_i10.Failure, _i5.RiddleModel>(
+          this,
+          Invocation.method(
+            #getDataFromApi,
+            [],
+          ),
+        )),
+      ) as _i6.Future<_i3.Either<_i10.Failure, _i5.RiddleModel>>);
 }

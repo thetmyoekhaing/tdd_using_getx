@@ -1,16 +1,9 @@
-# getx_testing
+### Folder Structure
 
-A new Flutter project.
+![Alt text](/tdd.png)
 
-## Getting Started
+## abstract repo -> domain layer (test functions abstract)
 
-This project is a starting point for a Flutter application.
+## implementation repo -> data layer (test functions implementation)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## use case -> domain layer (this is to call from view)
